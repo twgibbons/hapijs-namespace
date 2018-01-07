@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "config": "^1.29.0",
-    "hapi": "^17.2.0"
+    "hapi": "^17.2.0",
+    "hapijs-namespace": "^1.0.0"
   }
 }
