@@ -1,0 +1,11 @@
+{
+  "server": {
+    "connection": {
+      "port": 8080,
+      "host": "localhost",
+      "routes": {
+        "cors": true
+      }
+    }
+  }
+}

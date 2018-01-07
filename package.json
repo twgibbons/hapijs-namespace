@@ -1,0 +1,42 @@
+{
+  "name": "hapijs-namespace",
+  "version": "1.0.0",
+  "description": "Apply namespaced routes in Hapi",
+  "author": "Thomas Gibbons <thomas.gibbons@i9t-solutions.com>",
+  "homepage": "https://github.com/twgibbons/hapijs-namespace#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twgibbons/hapijs-namespace.git"
+  },
+  "keywords": [
+    "hapi",
+    "namespace",
+    "prefix",
+    "routes"
+  ],
+  "bugs": {
+    "url": "https://github.com/twgibbons/hapijs-namespace/issues"
+  },
+  "peerDependencies": {
+    "hapi": ">= 16.x.x"
+  },
+  "devDependencies": {
+    "jest": "^22.0.4"
+  },
+  "jest": {
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "/__tests__/mocks/"
+    ],
+    "collectCoverage": true
+  }
+}

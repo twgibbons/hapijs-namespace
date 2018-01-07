@@ -1,0 +1,17 @@
+{
+  "name": "hapijs-namespace-example",
+  "version": "1.0.0",
+  "description": "Sample usage of hapijs-namespace",
+  "author": "Thomas Gibbons <thomas.gibbons@i9t-solutions.com>",
+  "license": "ISC",
+  "scripts": {
+    "start": "node sample.js"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "dependencies": {
+    "config": "^1.29.0",
+    "hapi": "^17.2.0"
+  }
+}
