@@ -1,5 +1,8 @@
 # hapijs-namespace
 
+[![Build Status](https://travis-ci.org/twgibbons/hapijs-namespace.svg?branch=master)](https://travis-ci.org/twgibbons/hapijs-namespace)
+[![Coverage Status](https://coveralls.io/repos/github/twgibbons/hapijs-namespace/badge.svg?branch=master)](https://coveralls.io/github/twgibbons/hapijs-namespace?branch=master) 
+
 Apply namespaced routes in Hapi
 
 ## Install
