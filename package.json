@@ -1,6 +1,6 @@
 {
   "name": "hapijs-namespace",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Apply namespaced routes in Hapi",
   "author": "Thomas Gibbons <thomas.gibbons@i9t-solutions.com>",
   "homepage": "https://github.com/twgibbons/hapijs-namespace#readme",
@@ -31,6 +31,7 @@
     "hapi": ">= 16.x.x"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "jest": "^22.0.4"
   },
   "jest": {
@@ -39,8 +40,5 @@
       "/__tests__/mocks/"
     ],
     "collectCoverage": true
-  },
-  "dependencies": {
-    "coveralls": "^3.0.0"
   }
 }
