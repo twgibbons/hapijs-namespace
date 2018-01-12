@@ -1,6 +1,6 @@
 {
   "name": "hapijs-namespace-example",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Sample usage of hapijs-namespace",
   "author": "Thomas Gibbons <thomas.gibbons@i9t-solutions.com>",
   "license": "ISC",
