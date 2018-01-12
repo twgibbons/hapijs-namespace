@@ -1,6 +1,6 @@
 {
   "name": "hapijs-namespace-example",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Sample usage of hapijs-namespace",
   "author": "Thomas Gibbons <thomas.gibbons@i9t-solutions.com>",
   "license": "ISC",
@@ -11,7 +11,8 @@
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "config": "^1.29.0",
+    "config": "^1.29.1",
+    "good": "^7.3.0",
     "hapi": "^17.2.0",
     "hapijs-namespace": "^1.0.0"
   }

@@ -2,5 +2,3 @@
 /node_modules/
 /example/node_modules/
 /coverage/
-/package-lock.json
-/example/package-lock.json
