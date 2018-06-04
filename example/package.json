@@ -11,9 +11,9 @@
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "config": "^1.29.1",
-    "good": "^7.3.0",
-    "hapi": "^17.2.0",
-    "hapijs-namespace": "^1.0.0"
+    "config": "^1.30.0",
+    "good": "^8.1.1",
+    "hapi": "^17.5.1",
+    "hapijs-namespace": "^1.0.4"
   }
 }
