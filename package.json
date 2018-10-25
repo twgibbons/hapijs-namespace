@@ -1,6 +1,6 @@
 {
   "name": "hapijs-namespace",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Apply namespaced routes in Hapi",
   "author": "Thomas Gibbons <thomas.gibbons@i9t-solutions.com>",
   "homepage": "https://github.com/twgibbons/hapijs-namespace#readme",
