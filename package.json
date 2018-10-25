@@ -39,6 +39,7 @@
     "testPathIgnorePatterns": [
       "/__tests__/mocks/"
     ],
-    "collectCoverage": true
+    "collectCoverage": true,
+    "testEnvironment": "node"
   }
 }
