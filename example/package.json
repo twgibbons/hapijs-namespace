@@ -14,6 +14,6 @@
     "config": "^1.30.0",
     "good": "^8.1.1",
     "hapi": "^17.5.1",
-    "hapijs-namespace": "^1.0.4"
+    "hapijs-namespace": "1.0.x"
   }
 }
