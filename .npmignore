@@ -3,3 +3,4 @@
 /coverage/
 /.idea/
 /.travis.yml
+/package-lock.json
