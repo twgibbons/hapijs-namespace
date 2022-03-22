@@ -1,0 +1,5 @@
+/__tests__/
+/example/
+/coverage/
+/.idea/
+/.travis.yml
