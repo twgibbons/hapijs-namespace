@@ -1,6 +1,6 @@
 {
   "name": "hapijs-namespace",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Apply namespaced routes in Hapi",
   "author": "Thomas Gibbons <thomas.gibbons@i9t-solutions.com>",
   "homepage": "https://github.com/twgibbons/hapijs-namespace#readme",
@@ -28,7 +28,7 @@
     "url": "https://github.com/twgibbons/hapijs-namespace/issues"
   },
   "peerDependencies": {
-    "hapi": ">= 16.x.x"
+    "@hapi/hapi": ">= 16.x.x"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",

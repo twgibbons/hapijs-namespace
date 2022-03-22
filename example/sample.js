@@ -1,4 +1,4 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const Config = require('config');
 const { HealthcheckApi } = require('./api');
 const appPackage = require('../package.json');
