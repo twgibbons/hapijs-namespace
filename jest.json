@@ -1,0 +1,31 @@
+{
+  "verbose": true,
+  "testEnvironment": "node",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "tsconfig.lint.json",
+      "diagnostics": true
+    }
+  },
+  "testMatch": [
+    "<rootDir>/__tests__/**/*.ts",
+    "<rootDir>/__tests__/**/*.js"
+  ],
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "<rootDir>/src/index.ts",
+    "<rootDir>/dist/index.js"
+  ],
+  "testPathIgnorePatterns": [
+    "<rootDir>/__tests__/mocks/",
+    "<rootDir>/example"
+  ]
+}

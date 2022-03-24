@@ -1,79 +1,114 @@
 const namespace = require('../');
-const ServerMock = require('./mocks/server_mock');
+const Hapi = require("@hapi/hapi");
+const {Server} = require("@hapi/hapi");
 
-describe('Namespace helper', () => {
-  test('Adds namespaced routes', done => {
+const server = Hapi.server();
+describe('Namespace Helper - Javascript', () => {
+  beforeAll((done) => {
+    server.events.on('start', () => {
+      done()
+    })
+    server.start()
+  })
+
+  afterAll((done) => {
+    server.events.on('stop', () => {
+      done();
+    })
+    server.stop();
+  })
+
+  test('Adds namespaced routes', async () => {
     const test_routes = [
       {
         method: 'GET',
         path: '/bar',
-        config: {
+        options: {
           description: 'Foobar test route',
+          handler: () => 'Foobar',
         },
       },
 
       {
         method: 'POST',
         path: '/baz',
-        config: {
+        options: {
           description: 'Foobaz test route',
+          handler: () => 'Foobaz',
         },
       },
     ];
-    const server = new ServerMock();
     namespace(server, '/foo', test_routes);
-    const namespaced_routes = server.getRoutes();
 
-    expect(namespaced_routes[0].method).toEqual('GET');
-    expect(namespaced_routes[0].path).toEqual('/foo/bar');
-    expect(namespaced_routes[0].config.description).toEqual('Foobar test route');
-
-    expect(namespaced_routes[1].method).toEqual('POST');
-    expect(namespaced_routes[1].path).toEqual('/foo/baz');
-    expect(namespaced_routes[1].config.description).toEqual('Foobaz test route');
-
-    done();
+    const requests = [
+      {
+        options: {
+          method: 'GET',
+          url: '/foo/bar',
+        },
+        result: {
+          statusCode: 200,
+          body: 'Foobar',
+        }
+      },
+      {
+        options: {
+          method: 'POST',
+          url: '/foo/baz',
+        },
+        result: {
+          statusCode: 200,
+          body: 'Foobaz',
+        }
+      }
+    ]
+    for (const r of requests) {
+      const response = await server.inject(r.options);
+      expect(response.statusCode).toBe(r.result.statusCode);
+      expect(response.result).toBe(r.result.body)
+    }
   });
 
-  test('Correctly namespaces root route', done => {
+  test('Correctly namespaces root route', async () => {
     const test_routes = [
       {
         method: 'GET',
         path: '/',
-        config: {
+        options: {
           description: 'Foobar test route',
+          handler: () => 'FooRoot',
         },
       },
     ];
-    const server = new ServerMock();
     namespace(server, '/foo', test_routes);
-    const namespaced_routes = server.getRoutes();
+    const options = {
+      method: 'GET',
+      url: '/foo'
+    }
+    const response = await server.inject(options);
+    expect(response.statusCode).toBe(200);
+    expect(response.result).toBe('FooRoot')
 
-    expect(namespaced_routes[0].method).toEqual('GET');
-    expect(namespaced_routes[0].path).toEqual('/foo');
-    expect(namespaced_routes[0].config.description).toEqual('Foobar test route');
-
-    done();
   });
 
-  test('Does not prefix when not passed a namespace', done => {
+  test('Does not prefix when not passed a namespace', async () => {
     const test_routes = [
       {
         method: 'GET',
-        path: '/foo',
-        config: {
-          description: 'Foo test route',
+        path: '/bat',
+        options: {
+          description: 'Bat test route',
+          handler: () => 'BatTest'
         },
       },
     ];
-    const server = new ServerMock();
     namespace(server, null, test_routes);
-    const namespaced_routes = server.getRoutes();
-
-    expect(namespaced_routes[0].method).toEqual('GET');
-    expect(namespaced_routes[0].path).toEqual('/foo');
-    expect(namespaced_routes[0].config.description).toEqual('Foo test route');
-
-    done();
+    const options = {
+      method: 'GET',
+      url: '/bat'
+    }
+    const response = await server.inject(options);
+    expect(response.statusCode).toBe(200);
+    expect(response.result).toBe('BatTest')
   });
 });

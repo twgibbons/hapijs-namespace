@@ -1,7 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const Config = require('config');
 const { HealthcheckApi } = require('./api');
-const appPackage = require('../package.json');
+const appPackage = require('../../package.json');
 
 (async () => {
   const server = new Hapi.server(JSON.parse(JSON.stringify(Config.server.connection)));

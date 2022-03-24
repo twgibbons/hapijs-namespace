@@ -1,12 +1,14 @@
-const namespace = require('hapijs-namespace');
-const { HealthcheckController } = require('../controllers');
+import {Server} from "@hapi/hapi";
 
-const HealthcheckApi = (server, prefix) => {
+import namespace from 'hapijs-namespace'
+import HealthcheckController from '../controllers/healthcheck.controller';
+
+export function HealthcheckApi (server:Server, prefix:string) {
   namespace(server, prefix, [
     {
       method: 'GET',
       path: '/',
-      config: {
+      options: {
         description: 'Outputs package name and version',
         notes: ['Should return status 200 with a simple object giving app info'],
         tags: ['api', 'healthcheck'],
@@ -17,7 +19,7 @@ const HealthcheckApi = (server, prefix) => {
     {
       method: 'GET',
       path: '/ping',
-      config: {
+      options: {
         description: 'Simple healthcheck route',
         notes: ['Should return status 200 with a simple object'],
         tags: ['api', 'healthcheck'],
@@ -25,6 +27,5 @@ const HealthcheckApi = (server, prefix) => {
       },
     },
   ]);
-};
+}
 
-module.exports = HealthcheckApi;
