@@ -12,7 +12,8 @@
     "test": "jest --config=jest.json",
     "test-cov": "jest && cat coverage/lcov.info | coveralls --verbose",
     "build": "tsc",
-    "lint": "eslint --ext ts src/**"
+    "lint": "eslint --ext ts src/**",
+    "prepack": "tsc"
   },
   "engineStrict": true,
   "engines": {

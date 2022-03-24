@@ -2,8 +2,7 @@ const namespace = require('hapijs-namespace');
 const { HealthcheckController } = require('../controllers');
 
 const HealthcheckApi = (server, prefix) => {
-  console.log(namespace)
-  namespace.default(server, prefix, [
+  namespace(server, prefix, [
     {
       method: 'GET',
       path: '/',

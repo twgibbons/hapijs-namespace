@@ -4,3 +4,9 @@
 /.idea/
 /.travis.yml
 /package-lock.json
+/src/
+/.eslintignore
+/.eslintrc
+/jest.json
+/tsconfig.json
+/tsconfig.lint.json

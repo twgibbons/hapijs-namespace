@@ -2,4 +2,6 @@
 /node_modules/
 /example/js/node_modules/
 /example/ts/node_modules/
+/example/ts/dist/
 /coverage/
+/dist/
